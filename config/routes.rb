@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
-  get 'stocks/search'
-
-  get 'stocks/search'
 
   devise_for :users
+
+  resources :user_stocks, except: [:show, :edit, :update]
+
+  get 'stocks/search'
+
+  get 'stocks/search'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
