@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :user_stocks, except: [:show, :edit, :update]
   resources :users, only: [:show]
-  resources :friendships, only: [:show]
+  resources :friendships, only: [:show, :destroy]
 
   get 'my_friends', to: "users#my_friends"
   get 'search_friends', to: "users#search"
